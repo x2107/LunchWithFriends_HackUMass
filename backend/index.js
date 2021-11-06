@@ -25,7 +25,7 @@ const serviceAccount = require('../firestore.creds.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: `https://${serviceAccount.project_id}.firebaseio.com`,
+  databaseURL: `https://${serviceAccount.process.env.projectId}.firebaseio.com`,
 });
 
 const firestore = admin.firestore();
